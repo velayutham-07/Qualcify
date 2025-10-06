@@ -1,0 +1,10 @@
+com\qualcify\controller\PageController.class
+com\qualcify\service\AIService.class
+com\qualcify\controller\HelloController.class
+com\qualcify\utils\WekaClassifier.class
+com\qualcify\service\AiPredictionService.class
+com\qualcify\QaSystemApplication.class
+com\qualcify\WebConfig.class
+com\qualcify\utils\ExcelReader.class
+com\qualcify\model\BatchDefect.class
+com\qualcify\controller\DataController.class

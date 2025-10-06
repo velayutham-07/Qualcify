@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>QA System - Results</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style>
+        .chart-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .chart-box {
+            margin: 20px;
+            text-align: center;
+        }
+        .table-container {
+            max-height: 400px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+        .download-btns {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body class="container">
+    <h1 class="mt-4">QA System - Analysis Results</h1>
+
+    <!-- Download Buttons -->
+    <div class="download-btns">
+        <a th:href="@{'/data/download/' + ${fileName}}" class="btn btn-primary">Download Excel</a>
+        <a th:href="@{${currentChartPath}}" class="btn btn-success" download>Download Current Chart</a>
+        <a th:href="@{${forecastChartPath}}" class="btn btn-warning" download>Download AI Forecast Chart</a>
+    </div>
+
+    <!-- Excel Table -->
+    <div class="table-container">
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>Batch</th>
+                    <th>Defect Count</th>
+                    <th>Defect Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="defect : ${defects}">
+                    <td th:text="${defect.batch}">Batch 1</td>
+                    <td th:text="${defect.defect}">0</td>
+                    <td th:text="${defect.defectType}">Type A</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Charts -->
+    <h3>AI Report:</h3>
+        <ul>
+            <li th:each="line : ${aiReport}" th:text="${line}"></li>
+        </ul>
+        <img th:src="${currentChartPath}" alt="Current Defects Chart"/>
+        <img th:src="${forecastChartPath}" alt="AI Forecast Chart"/>
+
+
+</body>
+</html>
