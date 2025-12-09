@@ -27,8 +27,8 @@ Frontend	Thymeleaf Templates (HTML, CSS, JS)
 Data Source	Excel Uploads (Apache POI / Custom Reader)
 
 
-📁 Project Structure
-
+## 📁 Project Structure
+```
 qualcify/
 ├── src/main/java/com/qualcify/
 │   ├── controller/
@@ -54,7 +54,7 @@ qualcify/
 │   └── static/uploads/
 │
 └── README.md
-
+```
 ⚙️ How It Works
 
 Excel Upload
